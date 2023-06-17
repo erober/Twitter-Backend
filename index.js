@@ -5,7 +5,7 @@ const mongoose= require('mongoose');
 // Initialize the app
 const app = express();
 
-mongoose.connect("mongodb+srv://gabbar329:munis@cluster0.qlr2voe.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://<username>:<password>@cluster0.qlr2voe.mongodb.net/?retryWrites=true&w=majority")
 
 app.use(parser.json());
 app.use(parser.urlencoded({extended:true}));
