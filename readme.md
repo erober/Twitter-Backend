@@ -1,3 +1,7 @@
+The backend is hosted on Vercel: 
+
+https://twitter-backend-nine.vercel.app/
+
 To run the application on the local server clone it first and then run these commands
 
 npm install
