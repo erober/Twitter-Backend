@@ -6,7 +6,10 @@ require("dotenv").config()
 // Initialize the app
 const app = express();
 
-mongoose.connect("mongodb+srv://gabbar329:munis@cluster0.qlr2voe.mongodb.net/?retryWrites=true&w=majority")
+// Import mongodb credentials and connect to mongodb atlas database
+const  user = process.env.mongoDBuser
+const pass = process.env.mongoDbpass
+mongoose.connect("mongodb+srv://cluster0.qlr2voe.mongodb.net/test?retryWrites=true&w=majority", { user: user, pass: pass, useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(parser.json());
 app.use(parser.urlencoded({extended:true}));
