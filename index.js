@@ -1,4 +1,6 @@
 const express = require('express')
+const helmet = require('helmet')
+
 const parser=require('body-parser');
 const mongoose= require('mongoose');
 require("dotenv").config()
@@ -11,6 +13,7 @@ const  user = process.env.mongoDBuser
 const pass = process.env.mongoDbpass
 mongoose.connect("mongodb+srv://cluster0.qlr2voe.mongodb.net/test?retryWrites=true&w=majority", { user: user, pass: pass, useNewUrlParser: true, useUnifiedTopology: true })
 
+app.use(helmet())
 app.use(parser.json());
 app.use(parser.urlencoded({extended:true}));
 
@@ -41,5 +44,5 @@ var port = process.env.PORT || 8000;
 
 // Launch app to listen to specified port
 app.listen(port, function () {
-     console.log("Running Twitter on port " + port);
+    console.log("Running Twitter on port " + port);
 });
